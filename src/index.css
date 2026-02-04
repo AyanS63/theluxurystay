@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Outfit", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-primary-50: #fbf7f0;
+  --color-primary-100: #f5eadc;
+  --color-primary-200: #edd5bd;
+  --color-primary-300: #e3b895;
+  --color-primary-400: #d7956a;
+  --color-primary-500: #ce7646;
+  --color-primary-600: #c05b38;
+  --color-primary-700: #a0452f;
+  --color-primary-800: #83392b;
+  --color-primary-900: #6a3127;
+  --color-primary-950: #391811;
+
+  --color-secondary-50: #f0f9ff;
+  --color-secondary-100: #e0f2fe;
+  --color-secondary-200: #bae6fd;
+  --color-secondary-300: #7dd3fc;
+  --color-secondary-400: #38bdf8;
+  --color-secondary-500: #0ea5e9;
+  --color-secondary-600: #0284c7;
+  --color-secondary-700: #0369a1;
+  --color-secondary-800: #075985;
+  --color-secondary-900: #0c4a6e;
+  --color-secondary-950: #082f49;
+
+  --color-gold-100: #f9f1d8;
+  --color-gold-200: #f0deaa;
+  --color-gold-300: #d4af37;
+  --color-gold-400: #aa8c2c;
+  --color-gold-500: #80681e;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans transition-colors duration-300;
+  }
+  :root.dark body {
+    @apply bg-slate-900 text-slate-100;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors duration-200 font-medium shadow-md hover:shadow-lg;
+  }
+  .btn-secondary {
+    @apply bg-white text-primary-600 border border-primary-200 px-4 py-2 rounded-lg hover:bg-primary-50 transition-colors duration-200 font-medium;
+  }
+  :root.dark .btn-secondary {
+    @apply bg-slate-800 text-primary-400 border-slate-700 hover:bg-slate-700;
+  }
+  .input-field {
+    @apply w-full px-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+  :root.dark .input-field {
+    @apply bg-slate-800 border-slate-700 text-white focus:ring-primary-600 placeholder:text-slate-500;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-slate-100 p-6;
+  }
+  :root.dark .card {
+    @apply bg-slate-800 border-slate-700 shadow-none;
+  }
+
+  /* DatePicker Customization */
+  .react-datepicker-wrapper {
+    @apply w-full;
+  }
+  .react-datepicker-popper {
+    @apply z-50;
+  }
+  .react-datepicker {
+    @apply font-sans border-none rounded-2xl shadow-xl overflow-hidden bg-white dark:bg-slate-800;
+  }
+  .react-datepicker__header {
+    @apply bg-primary-50 dark:bg-slate-700 border-b border-gray-100 dark:border-slate-600 pt-3 pb-2;
+  }
+  .react-datepicker__current-month {
+    @apply text-slate-800 dark:text-white font-serif text-lg font-bold mb-2;
+  }
+  .react-datepicker__day-name {
+    @apply text-slate-400 dark:text-slate-500 font-bold uppercase text-xs;
+  }
+  .react-datepicker__day {
+    @apply rounded-full hover:bg-primary-50 dark:hover:bg-slate-600 transition-colors m-1;
+  }
+  .react-datepicker__day--selected,
+  .react-datepicker__day--keyboard-selected {
+    background-color: var(--color-primary-600) !important;
+    color: white !important;
+    font-weight: bold;
+  }
+  .react-datepicker__day--selected:hover,
+  .react-datepicker__day--keyboard-selected:hover {
+    background-color: var(--color-primary-700) !important;
+  }
+  .react-datepicker__day--today {
+    @apply text-primary-600 font-bold border border-primary-600 bg-transparent;
+  }
+  .react-datepicker__day--disabled {
+    @apply text-slate-300 dark:text-slate-600 line-through opacity-50 hover:bg-transparent cursor-not-allowed;
+  }
+}
+
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 0.2s ease-out;
+  }
+
+  /* Hide Stripe Link floating bubble if present */
+  .p-LinkButton {
+    display: none !important;
+  }
+}
