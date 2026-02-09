@@ -19,7 +19,7 @@ const HotelStaffDashboard = () => {
     try {
       const res = await api.get('/tasks');
       
-      console.log('DEBUG: Logged In User:', user);
+
       
       // Filter client-side
       const myTasks = res.data.filter(t => {
@@ -27,7 +27,7 @@ const HotelStaffDashboard = () => {
         const assigneeId = rawAssignee?._id || rawAssignee;
         const currentUserId = user.id || user._id;
 
-        console.log(`Task ${t._id} | AssignedObj:`, rawAssignee, '| ID:', assigneeId, 'vs Me:', currentUserId, 'Match:', assigneeId == currentUserId); // Using loose equality check just in case
+
         
         return assigneeId == currentUserId;
       });

@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import GuestNavbar from '../components/GuestNavbar';
 import GuestFooter from '../components/GuestFooter';
 import { Award, Users, Globe, Clock, Shield, Heart } from 'lucide-react';
@@ -6,6 +7,12 @@ import { Award, Users, Globe, Clock, Shield, Heart } from 'lucide-react';
 const AboutUs = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900">
+      <SEO 
+        title="About Us" 
+        description="Discover the story behind LuxuryStay. Learn about our mission to redefine luxury hospitality and our commitment to excellence."
+        keywords="about luxury stay, hotel history, hospitality vision, luxury hotel mission"
+        url="/about"
+      />
       <GuestNavbar />
       
       {/* Hero Section */}

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { BedDouble, Sparkles, MapPin, Star, ArrowRight, User, Utensils, Coffee, Wine, Quote, Mail } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
@@ -10,6 +12,36 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900 font-sans text-slate-900 dark:text-gray-100">
+      <SEO 
+        title="Home" 
+        description="Welcome to LuxuryStay - The ultimate destination for luxury, comfort, and world-class hospitality."
+        keywords="luxury hotel, 5 star hotel, resort, accommodation, spa, fine dining"
+      />
+      <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Hotel",
+              "name": "LuxuryStay Hotel & Resort",
+              "image": "https://luxurystay.vercel.app/assets/hero-bg.jpg",
+              "telephone": "+1-555-123-4567",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "123 Luxury Ave",
+                "addressLocality": "Paradise City",
+                "postalCode": "56789",
+                "addressCountry": "US"
+              },
+              "priceRange": "$$$",
+              "starRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+              }
+            }
+          `}
+        </script>
+      </Helmet>
       <GuestNavbar transparent={true} />
 
       {/* Hero Section */}

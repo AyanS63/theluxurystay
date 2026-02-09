@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 import api from '../utils/api';
 import { Plus, Loader, Trash2, Edit, X, Check, BedDouble, AlertCircle } from 'lucide-react';
@@ -124,6 +125,12 @@ const RoomManagement = () => {
 
   return (
     <div className="space-y-6">
+      <SEO 
+        title="Luxury Rooms & Suites" 
+        description="Browse our collection of premium rooms and suites. From ocean views to royal penthouses, find your perfect stay."
+        keywords="hotel rooms, luxury suites, booking, availability, room prices"
+        url="/rooms"
+      />
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <h2 className="text-2xl font-bold font-serif text-slate-800 dark:text-white">Room Management</h2>
         <button 

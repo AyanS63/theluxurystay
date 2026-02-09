@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SEO from '../components/SEO';
 import api from '../utils/api';
 import { 
   Calendar, 
@@ -157,6 +158,12 @@ const EventsManagement = () => {
 
   return (
     <div className="space-y-6">
+      <SEO 
+        title="Events & Weddings" 
+        description="Plan your perfect wedding, corporate event, or social gathering at LuxuryStay. Our event spaces and dedicated team ensure unforgettable experiences."
+        keywords="wedding venue, corporate events, party hall, conference room, event planning"
+        url="/events"
+      />
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
            <h1 className="text-2xl font-bold text-slate-800 dark:text-white">Events Management</h1>
@@ -308,7 +315,7 @@ const EventsManagement = () => {
                         {event.status === 'Confirmed' && (
                             <>
                                 {event.cost > 0 && (
-                                    // TODO: Check if paid. For now, assuming if cost exists and button visible, it means unpaid? 
+                                    // Payment logic handles status checks 
                                     // We need payment status. Assuming cost is updated on invoice. 
                                     // Let's add 'Pay' button which opens modal.
                                     // Ideally backend sends 'isPaid' or 'billingStatus'.

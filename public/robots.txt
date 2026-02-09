@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://luxurystay.vercel.app/sitemap.xml

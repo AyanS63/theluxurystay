@@ -21,20 +21,20 @@ export const ChatProvider = ({ children }) => {
     if (socket) {
       // 'socket' is actually the Pusher channel here
       const handleMessage = (newMessage) => {
-        console.log("📨 Pulsher Event Received:", newMessage);
+
 
         // Prevent duplicate: Ignore if the message is from ME (since we already added it optimistically)
         const senderId = newMessage.sender._id || newMessage.sender;
         const myId = user._id || user.id;
         
         if (senderId === myId) {
-             console.log("Ignoring own message from Pusher");
+
              return;
         }
 
         // If chat is open with this user, add to messages
         if (activeChat && (senderId === activeChat._id)) {
-          console.log("Adding to active chat");
+
           setMessages((prev) => {
             // Deduplicate by _id (Safety net)
             if (newMessage._id && prev.some(m => m._id === newMessage._id)) {
@@ -43,7 +43,7 @@ export const ChatProvider = ({ children }) => {
             return [...prev, newMessage];
           });
         } else {
-          console.log("Incrementing unread count");
+
           setUnreadCount(previous => previous + 1);
         }
       };

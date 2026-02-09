@@ -19,14 +19,15 @@ const GuestFooter = () => {
              <h5 className="text-white font-bold mb-6 text-lg">Quick Links</h5>
              <ul className="space-y-4">
                 <li><Link to="/" className="hover:text-primary-400 transition-colors">Home</Link></li>
-                <li><Link to="/about-us" className="hover:text-primary-400 transition-colors">About Us</Link></li>
                 <li><Link to="/rooms" className="hover:text-primary-400 transition-colors">Rooms & Suites</Link></li>
-                <li><Link to="/contact" className="hover:text-primary-400 transition-colors">Contact Us</Link></li>
+                <li><Link to="/events" className="hover:text-primary-400 transition-colors">Events</Link></li>
+                <li><Link to="/about-us" className="hover:text-primary-400 transition-colors">About Us</Link></li>
              </ul>
           </div>
           <div>
              <h5 className="text-white font-bold mb-6 text-lg">Support</h5>
              <ul className="space-y-4">
+               <li><Link to="/contact" className="hover:text-primary-400 transition-colors">Contact Us</Link></li>
                 <li><Link to="/faqs" className="hover:text-primary-400 transition-colors">FAQ</Link></li>
                 <li><Link to="/privacy-policy" className="hover:text-primary-400 transition-colors">Privacy Policy</Link></li>
                 <li><Link to="/terms-of-service" className="hover:text-primary-400 transition-colors">Terms of Service</Link></li>
@@ -47,7 +48,7 @@ const GuestFooter = () => {
           </div>
        </div>
        <div className="max-w-7xl mx-auto pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-         <div className="text-sm">© 2025 LuxuryStay Hotel. All rights reserved.</div>
+         <div className="text-sm">© 2026 LuxuryStay Hotel. All rights reserved.</div>
          <div className="flex gap-8 text-sm">
            <Link to="/privacy-policy" className="hover:text-white">Privacy</Link>
            <Link to="/terms-of-service" className="hover:text-white">Terms</Link>

@@ -42,7 +42,7 @@ export const SocketProvider = ({ children }) => {
       }
 
       userChannel.bind("pusher:subscription_succeeded", () => {
-        console.log("✅ Pusher User Subscribed:", userChannelName);
+
       });
 
       // Virtual Socket Interface
@@ -70,7 +70,7 @@ export const SocketProvider = ({ children }) => {
       setSocket(virtualSocket);
 
       return () => {
-        console.log("Unsubscribing Pusher...");
+
         channels.forEach(({ name }) => pusher.unsubscribe(name));
         pusher.disconnect();
         setSocket(null);

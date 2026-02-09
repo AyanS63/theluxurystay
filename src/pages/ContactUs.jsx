@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import GuestNavbar from '../components/GuestNavbar';
 import GuestFooter from '../components/GuestFooter';
 import { Mail, MapPin, Phone, CheckCircle, AlertCircle, Loader } from 'lucide-react';
@@ -42,6 +43,12 @@ const ContactUs = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900">
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with LuxuryStay. Our 24/7 concierge team is ready to assist you with reservations, events, and inquiries."
+        keywords="contact hotel, customer support, reservations, hotel location, luxury stay contact"
+        url="/contact"
+      />
       <GuestNavbar transparent />
 
       {/* Hero Section */}
